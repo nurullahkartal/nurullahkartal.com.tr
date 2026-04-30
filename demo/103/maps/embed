@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv"></div>
+      
+    <script nonce="CPow8XtzG6OxF-WGRleNPA">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["1498193461682636907","16270659485725470928"],"/m/09949m",null,[410082376,289783589],null,null,null,1,null,null,null,[[408114040,285955540],[411992390,294288049]],null,null,"gcid:locality"],0,1,null,null,0,null,0]]]],null,["nl","tr"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"E6bnafrSF9OWi-gP34CL2QQ",null,null,null,[[[192697.7932759513,29.01217945,41.0053215],[0,0,0],null,13.10000038146973],null,0,[["0x14caa7040068086b:0xe1ccfe98bc01b0d0","Istanboel",[41.0082376,28.9783589]],"Istanboel",null,null,null,null,null,null,null,null,null,["/url?q=http://www.ibb.gov.tr/en-US/Pages/Home.aspx\u0026opi=79508299\u0026sa=U\u0026ved=0ahUKEwi6qPXurv-TAxVTywIHHV_AIksQ61gIBygE\u0026usg=AOvVaw218bqklUigxz3Xk9fHMd87","ibb.gov.tr",null,"0ahUKEwi6qPXurv-TAxVTywIHHV_AIksQ61gIBygE"],null,"Istanboel",null,null,null,null,null,null,null,null,null,null,1,null,null,"ChIJawhoAASnyhQR0LABvJj-zOE",null,null,"0ahUKEwi6qPXurv-TAxVTywIHHV_AIksQ8BcIAigA","İstanbul"]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/64/9c/intl/nl_ALL/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="../maps-api-v3/embed/js/64/9c/intl/nl_ALL/init_embed.js" nonce="CPow8XtzG6OxF-WGRleNPA" as="script">
+    <script src="api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=nl&amp;region=tr&amp;callback=onApiLoad" nonce="CPow8XtzG6OxF-WGRleNPA" async="" defer=""></script>
+  </body>
+</html>

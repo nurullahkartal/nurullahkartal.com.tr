@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #mapDiv {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mapDiv"></div>
+      
+    <script nonce="EmIYHCH2Xzz9fcWUDuYmDg">
+      function onEmbedLoad() {
+        initEmbed([null,null,null,null,null,[[[2,"spotlit",null,null,null,null,null,[null,null,null,null,null,null,null,null,null,null,11,null,[null,null,null,null,null,null,null,null,null,null,null,null,null,1]]]],null,null,[[null,null,null,null,null,null,null,null,null,null,null,null,null,[[["9926595594179491787","4656841281507319270"],"/m/0czc1h",null,[407127431,3554833501],null,null,null,null,null,null,null,[[407125596,3554829281],[407134298,3554842092]],null,null,"gcid:historical_landmark"],0,0,null,null,0,null,0]]]],null,["uz","us"],[null,null,null,"/maps/api/js/ApplicationService.GetEntityDetails","/maps/embed/upgrade204",null,"/maps/embed/record204"],null,null,null,null,null,null,null,null,"2arnaeDYN_q7i-gPg9amwAg",null,null,null,[[[40674.95943414137,-74.01316095,40.7129947],[0,0,0],null,13.10000038146973],null,0,[["0x89c25a197c06b7cb:0x40a06c78f79e5de6","Ozodlik minorasi, 285 Fulton St, New York, NY 10007",[40.7127431,-74.0133795],"4656841281507319270"],"Ozodlik minorasi",["285 Fulton St","New York, NY 10007"],4.800000190734863,"30 918 ta sharh",null,null,null,null,null,null,["/url?q=https://wtc.com/\u0026opi=79508299\u0026sa=U\u0026ved=0ahUKEwigqe61s_-TAxX63QIHHQOrCYgQ61gIECgK\u0026usg=AOvVaw2dLiBCqKfb-YGBnTzHT1H9","wtc.com",null,"0ahUKEwigqe61s_-TAxX63QIHHQOrCYgQ61gIECgK"],"Tarixiy yodgorlik","285 Fulton St, New York, NY 10007",null,"$$$",null,null,null,null,null,null,null,null,null,null,null,"ChIJy7cGfBlawokR5l2e93hsoEA",null,null,"0ahUKEwigqe61s_-TAxX63QIHHQOrCYgQ8BcIAigA","One World Trade Center",null,null,null,null,null,1,["0ahUKEwigqe61s_-TAxX63QIHHQOrCYgQqtMBCAsoCA",["87G7PX7P+3J"],["PX7P+3J Nyu-York shahri, Nyu-York"],3],[null,[null,null,null,1,["Hozir ochiq",[[0,11,[null,[4279862841,4285388172]]]]]],2]]],null,null,null,0,null,null,null,null,null,null,[1]]);
+      }
+      function onApiLoad() {
+        var embed = document.createElement('script');
+        embed.src = "https://maps.gstatic.com/maps-api-v3/embed/js/64/9c/intl/uz_ALL/init_embed.js";
+        document.body.appendChild(embed);
+      }
+    </script>
+    <link rel="preload" href="../maps-api-v3/embed/js/64/9c/intl/uz_ALL/init_embed.js" nonce="EmIYHCH2Xzz9fcWUDuYmDg" as="script">
+    <script src="api/js?key=AIzaSyCmL18misQw9KdwqGaw3zHkitj8vG6QF2Y&amp;paint_origin=&amp;libraries=geometry,search&amp;v=weekly&amp;loading=async&amp;language=uz&amp;region=us&amp;callback=onApiLoad" nonce="EmIYHCH2Xzz9fcWUDuYmDg" async="" defer=""></script>
+  </body>
+</html>

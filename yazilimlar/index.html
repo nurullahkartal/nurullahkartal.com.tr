@@ -3,424 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gaziantep Yazılım Çözümleri ve Sektörel Hazır Web Siteleri. Nurullah Kartal - Digital Architect. Geleceği Kodluyoruz.">
-    <meta name="keywords" content="Gaziantep Yazılım Çözümleri, Sektörel Hazır Web Siteleri, Nurullah Kartal, Yazılım, Web Tasarım, Dijital Mimar">
+    <meta name="description" content="Gaziantep Yazılım Çözümleri ve Sektörel Hazır Web Siteleri. Nurullah Kartal - Digital Architect.">
     <meta name="author" content="Nurullah Kartal">
-    <title>Nurullah Kartal | Digital Architect - Yazılım Çözümleri</title>
+    <title>Yazılım Çözümleri | Digital Architect - Nurullah Kartal</title>
 
-    <!-- Preload & Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <!-- Libraries (CDNs for Performance, pointing conceptually to /resources/assets/) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.12/sweetalert2.min.css" />
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Custom Modern Stylesheet (Ana Tasarım Yasası) -->
+    <link rel="stylesheet" href="../resources/assets/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../nklogo.png">
+
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --surface-color: #1e293b;
-            --surface-hover: #334155;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.5);
-            --secondary: #8b5cf6;
-            --accent: #10b981;
-            --font-heading: 'Outfit', sans-serif;
-            --font-body: 'Inter', sans-serif;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --glass-bg: rgba(30, 41, 59, 0.7);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%);
-            background-attachment: fixed;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: var(--glass-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            color: var(--text-muted);
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-link:hover, .nav-link.active {
-            color: var(--text-main);
-        }
-
-        .nav-link.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--primary);
-            border-radius: 2px;
-        }
-
-        .btn-contact {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: white;
-            padding: 0.5rem 1.25rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-contact:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px var(--primary-glow);
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 10rem 2rem 5rem;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .hero h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.125rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-inline: auto;
-        }
-
-        .hero-badges {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            background: rgba(59, 130, 246, 0.1);
-            color: #60a5fa;
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border: 1px solid rgba(59, 130, 246, 0.2);
-        }
-
-        /* Portfolio Section */
-        .portfolio {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .filters {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background: var(--surface-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            padding: 0.5rem 1.5rem;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: var(--font-body);
-            font-weight: 500;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            box-shadow: 0 0 15px var(--primary-glow);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--surface-color);
-            border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            group: hover;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border-color: rgba(59, 130, 246, 0.3);
-        }
-
-        .card-img {
-            height: 200px;
-            background: var(--surface-hover);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            color: var(--text-muted);
-        }
-        
-        .card-img::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
-            z-index: 1;
-        }
-
-        .card-content {
-            padding: 1.5rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .card-category {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--primary);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
-
-        .card-title {
-            font-family: var(--font-heading);
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-
-        .card-actions {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1.5rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .card-link {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: color 0.2s;
-        }
-
-        .card-link:hover {
-            color: var(--primary);
-        }
-
-        .card-demo-id {
-            background: rgba(255,255,255,0.05);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            color: var(--text-muted);
-        }
-
-        /* Footer */
-        footer {
-            background: var(--surface-color);
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-        }
-        
-        .footer-logo span {
-            color: var(--primary);
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .hero {
-                padding-top: 8rem;
-            }
-        }
-    </style>
-
-    <!-- JSON-LD Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Nurullah Kartal - Sektörel Hazır Web Siteleri",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Web",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "TRY"
-      },
-      "author": {
-        "@type": "Person",
-        "name": "Nurullah Kartal",
-        "jobTitle": "Digital Architect"
+      /* Mobile Menu Toggle Styles */
+      .mobile-menu-btn { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; background: none; border: none; }
+      @media (max-width: 768px) {
+        .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: rgba(11, 15, 25, 0.95); padding: 20px; border-bottom: 1px solid var(--glass-border); }
+        .nav-links.active { display: flex; }
+        .mobile-menu-btn { display: block; }
       }
-    }
-    </script>
+    </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
-        <div class="nav-container">
-            <a href="./" class="logo">NK <span>YAZILIM</span></a>
-            <nav class="nav-links">
-                <a href="../" class="nav-link">Blog</a>
-                <a href="./" class="nav-link active">Yazılımlar</a>
-                <a href="iletisim/" class="btn-contact">İletişime Geç</a>
-            </nav>
+      <div class="container nav-content">
+        <div class="logo">
+          <a href="https://nurullahkartal.com.tr"><img src="../nklogo.png" alt="Digital Architect Logo"></a>
         </div>
+        <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+        <nav class="nav-links" id="navMenu">
+          <a href="https://nurullahkartal.com.tr"><i class="fas fa-home"></i> Anasayfa</a>
+          <a href="https://nurullahkartal.com.tr/blog"><i class="fas fa-newspaper"></i> Blog</a>
+          <a href="#urunler" style="color: var(--accent-neon);"><i class="fas fa-code"></i> Yazılımlar</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-badges" data-aos="fade-down">
-                <span class="badge">Gaziantep Yazılım Çözümleri</span>
-                <span class="badge">Sektörel Hazır Web Siteleri</span>
-            </div>
-            <h1 data-aos="fade-up" data-aos-delay="100">Nurullah Kartal <br><span>Digital Architect</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200">Modern, hızlı ve SEO uyumlu sektörel web siteleri ile dijital varlığınızı güçlendirin. <strong>Geleceği Kodluyoruz!</strong></p>
-            <div data-aos="fade-up" data-aos-delay="300">
-                <a href="#urunler" class="btn-contact" style="padding: 1rem 2rem; font-size: 1.1rem; display: inline-block;">Ürünleri İncele</a>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero container" data-aos="fade-down" data-aos-duration="1000">
+        <p class="breadcrumb">
+            <a href="https://nurullahkartal.com.tr"><i class="fas fa-home"></i> Anasayfa</a> 
+            <i class="fas fa-chevron-right"></i> 
+            <span>Yazılımlar</span>
+        </p>
+        <h1 style="font-size: 4rem;">Sektörel Yazılım <br><span style="color: var(--accent-neon);">Kataloğu</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 40px;">Modern, hızlı ve yüksek performanslı sektörel web siteleri ile dijital varlığınızı zirveye taşıyın.</p>
+        <div class="btn-group" style="flex-direction: row; justify-content: center;">
+            <a href="#urunler" class="btn btn-primary"><i class="fas fa-rocket"></i> Ürünleri İncele</a>
+        </div>
+    </section>
 
+    <!-- Portfolio Catalog Section -->
+    <main>
         <section id="urunler" class="portfolio">
             <div class="section-header" data-aos="fade-up">
-                <h2>Sektörel Yazılımlar</h2>
-                <p style="color: var(--text-muted);">İşletmenize özel, anında kullanıma hazır profesyonel çözümler.</p>
+                <h2>Özel Hazır Çözümler</h2>
+                <p style="color: var(--text-muted);">İşletmenize özel, anında kullanıma hazır profesyonel altyapılar.</p>
             </div>
 
             <div class="filters" data-aos="fade-up" data-aos-delay="100">
@@ -438,17 +83,19 @@
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">NK <span>YAZILIM</span></div>
-            <p style="color: var(--text-muted);">&copy; 2026 Nurullah Kartal. Tüm hakları saklıdır. Gaziantep Yazılım Çözümleri.</p>
+      <div class="container">
+        <div class="footer-logo">
+          <a href="https://nurullahkartal.com.tr"><img src="../nklogo.png" alt="Nurullah Kartal Logo"></a>
         </div>
+        <p class="copyright">Copyright © 2026 Nurullah Kartal | Digital Architect. Tüm Hakları Saklıdır.</p>
+      </div>
     </footer>
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.7.12/sweetalert2.all.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
         // Initialize AOS
@@ -458,31 +105,36 @@
             offset: 100
         });
 
+        // Mobile Menu
+        function toggleMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+
         // Portfolio Data
         const products = [
-            { id: '101', title: 'Oto Kurtarma Sitesi V2', category: 'otomotiv', catName: 'Otomotiv', file: 'index.html' },
-            { id: '102', title: 'Berber & Kuaför Sitesi', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.htm' },
-            { id: '103', title: 'Dondurmacı Web Sitesi', category: 'gida', catName: 'Gıda & Restoran', file: 'index.htm' },
-            { id: '104', title: 'Düğün Fotoğrafçısı Scripti', category: 'kurumsal', catName: 'Kurumsal & Ajans', file: 'index.htm' },
-            { id: '105', title: 'Ekspertiz | Oto Tamir', category: 'otomotiv', catName: 'Otomotiv', file: 'index.htm' },
-            { id: '106', title: 'Güzellik Salonu', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.html' },
-            { id: '107', title: 'Halı ve Koltuk Yıkama', category: 'hizmet', catName: 'Hizmet', file: 'index.html' },
-            { id: '108', title: 'Kişisel & Ajans Sitesi', category: 'kurumsal', catName: 'Kurumsal & Ajans', file: 'index.htm' },
-            { id: '109', title: 'Kişisel Portfolyo V1', category: 'kurumsal', catName: 'Kurumsal & Ajans', file: 'index.htm' },
-            { id: '110', title: 'Kurumsal Firma Sitesi', category: 'kurumsal', catName: 'Kurumsal & Ajans', file: 'index.htm' },
-            { id: '111', title: 'Nakliye ve Lojistik V1', category: 'hizmet', catName: 'Hizmet', file: 'index.htm' },
-            { id: '112', title: 'Psikolog Scripti', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.html' },
-            { id: '113', title: 'Psikolog Klinik Sitesi', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.htm' },
-            { id: '114', title: 'Dijital QR Menü Sistemi', category: 'gida', catName: 'Gıda & Restoran', file: 'index.htm' },
-            { id: '115', title: 'Restoran & Cafe Sitesi', category: 'gida', catName: 'Gıda & Restoran', file: 'index.html' },
-            { id: '116', title: 'Spor Salonu Scripti', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.html' },
-            { id: '117', title: 'Fitness & Spor Salonu', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.html' },
-            { id: '118', title: 'Gym & Spor Salonu V3', category: 'saglik', catName: 'Sağlık & Güzellik', file: 'index.htm' },
-            { id: '119', title: 'Su Arıtma Sistemleri', category: 'hizmet', catName: 'Hizmet', file: 'index.html' },
-            { id: '120', title: 'Ürün Tanıtım & E-Ticaret', category: 'kurumsal', catName: 'Kurumsal & Ajans', file: 'index.htm' }
+            { id: '101', title: 'Oto Kurtarma Sitesi V2', category: 'otomotiv', catName: 'Otomotiv', slug: 'acil-yol-yardim-oto-kurtarici-arac-tasima-v1' },
+            { id: '102', title: 'Berber & Kuaför Sitesi', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'berber-v1-hazir-site' },
+            { id: '103', title: 'Dondurmacı Web Sitesi', category: 'gida', catName: 'Gıda & Restoran', slug: 'dondurma-pastane-tasarimi-v1' },
+            { id: '104', title: 'Düğün Fotoğrafçısı Scripti', category: 'kurumsal', catName: 'Kurumsal & Ajans', slug: 'dugun-fotografcisi-v1' },
+            { id: '105', title: 'Ekspertiz | Oto Tamir', category: 'otomotiv', catName: 'Otomotiv', slug: 'ekspertiz-ve-oto-tamir-v1' },
+            { id: '106', title: 'Güzellik Salonu', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'guzellik-salonu-v1' },
+            { id: '107', title: 'Halı ve Koltuk Yıkama', category: 'hizmet', catName: 'Hizmet', slug: 'hali-ve-koltuk-yikama-v1' },
+            { id: '108', title: 'Kişisel & Ajans Sitesi', category: 'kurumsal', catName: 'Kurumsal & Ajans', slug: 'kisisel-ajans-hazir-site' },
+            { id: '109', title: 'Kişisel Portfolyo V1', category: 'kurumsal', catName: 'Kurumsal & Ajans', slug: 'kisisel-v1-hazir-site' },
+            { id: '110', title: 'Kurumsal Firma Sitesi', category: 'kurumsal', catName: 'Kurumsal & Ajans', slug: 'kurumsal-firma-hazir-site' },
+            { id: '111', title: 'Nakliye ve Lojistik V1', category: 'hizmet', catName: 'Hizmet', slug: 'nakliyat-tasarimi-v1' },
+            { id: '112', title: 'Psikolog Scripti', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'psikolog-site-tasarimi-v1' },
+            { id: '113', title: 'Psikolog Klinik Sitesi', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'psikolog-site-tasarimi-v2' },
+            { id: '114', title: 'Dijital QR Menü Sistemi', category: 'gida', catName: 'Gıda & Restoran', slug: 'qr-menu-hazir-site' },
+            { id: '115', title: 'Restoran & Cafe Sitesi', category: 'gida', catName: 'Gıda & Restoran', slug: 'restoran-hazir-site' },
+            { id: '116', title: 'Spor Salonu Scripti', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'spor-salonu_v1' },
+            { id: '117', title: 'Fitness & Spor Salonu', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'spor-salonu-v2' },
+            { id: '118', title: 'Gym & Spor Salonu V3', category: 'saglik', catName: 'Sağlık & Güzellik', slug: 'spor-salonu-v3' },
+            { id: '119', title: 'Su Arıtma Sistemleri', category: 'hizmet', catName: 'Hizmet', slug: 'su-aritma-sistemleri-v1' },
+            { id: '120', title: 'Ürün Tanıtım & E-Ticaret', category: 'kurumsal', catName: 'Kurumsal & Ajans', slug: 'urun-tanitim-v1' }
         ];
 
-        // Render Cards
+        // Render Cards with Glassmorphism Neon Gradients
         function renderCards(filter = 'all') {
             const grid = document.getElementById('portfolio-grid');
             grid.innerHTML = '';
@@ -495,12 +147,12 @@
             filtered.forEach((p, index) => {
                 const delay = (index % 6) * 100;
                 
-                // Generative vibrant placeholder gradient based on ID
-                const hue = (parseInt(p.id) * 37) % 360;
-                const gradient = `linear-gradient(135deg, hsl(${hue}, 70%, 20%), hsl(${hue + 40}, 70%, 10%))`;
+                // Generative vibrant neon gradient based on ID
+                const hue = (parseInt(p.id) * 45) % 360;
+                const gradient = `linear-gradient(135deg, hsla(${hue}, 100%, 50%, 0.4), hsla(${hue + 40}, 100%, 40%, 0.1))`;
 
                 const wrapper = document.createElement('div');
-                wrapper.className = 'card';
+                wrapper.className = 'card glass-panel';
                 wrapper.setAttribute('data-aos', 'fade-up');
                 wrapper.setAttribute('data-aos-delay', delay);
                 
@@ -512,9 +164,8 @@
                             <span class="card-category">${p.catName}</span>
                             <h3 class="card-title">${p.title}</h3>
                             <div class="card-actions">
-                                <a href="demo/${p.id}/" class="card-link" target="_blank">
-                                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
-                                    Demoyu İncele
+                                <a href="yazilim/${p.slug}/" class="card-link">
+                                    <i class="fas fa-arrow-right" style="color: var(--accent-orange);"></i> Detayları İncele
                                 </a>
                                 <span class="card-demo-id">#${p.id}</span>
                             </div>
@@ -536,7 +187,6 @@
                 
                 const filter = $(this).data('filter');
                 
-                // Simple fade effect
                 $('#portfolio-grid').css('opacity', '0');
                 setTimeout(() => {
                     renderCards(filter);

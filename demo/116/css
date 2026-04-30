@@ -1,0 +1,36 @@
+﻿@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 300;
+  src: url(s/bevietnam/v10/FBVwdDflz-iPfoPuIC2iKg0F_UBFIw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 400;
+  src: url(s/bevietnam/v10/FBVzdDflz-iPfoPuIC2iIqYn7Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 500;
+  src: url(s/bevietnam/v10/FBVwdDflz-iPfoPuIC2iKlUE_UBFIw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 600;
+  src: url(s/bevietnam/v10/FBVwdDflz-iPfoPuIC2iKnkD_UBFIw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 700;
+  src: url(s/bevietnam/v10/FBVwdDflz-iPfoPuIC2iKh0C_UBFIw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Be Vietnam';
+  font-style: normal;
+  font-weight: 800;
+  src: url(s/bevietnam/v10/FBVwdDflz-iPfoPuIC2iKgEB_UBFIw.ttf) format('truetype');
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kişisel & Ajans Sitesi | Digital Architect - Nurullah Kartal</title>
+  
+  <meta name="description" content="Digital Architect tarafından özenle hazırlanan Kişisel & Ajans Sitesi yazılımı ve web site çözümü.">
+  <meta name="author" content="Nurullah Kartal">
+  <meta name="theme-color" content="#0b0f19">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Legacy Central CSS -->
+  <link rel="stylesheet" href="../../../resources/assets/detay_sayfasi.css">
+
+  <!-- Custom Modern Stylesheet -->
+  <link rel="stylesheet" href="../../../resources/assets/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../../nklogo.png">
+
+  <style>
+    /* Mobile Menu Toggle Styles */
+    .mobile-menu-btn { display: none; font-size: 1.5rem; color: #fff; cursor: pointer; background: none; border: none; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; width: 100%; position: absolute; top: 100%; left: 0; background: rgba(11, 15, 25, 0.95); padding: 20px; border-bottom: 1px solid var(--glass-border); }
+      .nav-links.active { display: flex; }
+      .mobile-menu-btn { display: block; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-content">
+      <div class="logo">
+        <a href="https://nurullahkartal.com.tr"><img src="../../../nklogo.png" alt="Digital Architect Logo"></a>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+      <nav class="nav-links" id="navMenu">
+        <a href="https://nurullahkartal.com.tr"><i class="fas fa-home"></i> Anasayfa</a>
+        <a href="https://nurullahkartal.com.tr/yazilimlar"><i class="fas fa-code"></i> Yazılımlar</a>
+        <a href="https://nurullahkartal.com.tr/blog"><i class="fas fa-newspaper"></i> Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero container" data-aos="fade-down" data-aos-duration="1000">
+    <p class="breadcrumb">
+      <a href="https://nurullahkartal.com.tr"><i class="fas fa-home"></i> Anasayfa</a> 
+      <i class="fas fa-chevron-right"></i> 
+      <a href="https://nurullahkartal.com.tr/yazilimlar">Yazılımlar</a> 
+      <i class="fas fa-chevron-right"></i> 
+      <span>Kişisel & Ajans Sitesi</span>
+    </p>
+    <h1>Kişisel & Ajans Sitesi</h1>
+  </section>
+
+  <!-- Main Content Showcase -->
+  <main class="container product-showcase">
+    
+    <!-- Left Column: Detailed Features -->
+    <div class="product-details" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+      <div class="glass-panel">
+        <h2 style="margin-bottom: 25px; font-size: 1.8rem; color: #fff;">Proje Özellikleri</h2>
+        <div class="features-grid">
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="300">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Profesyonel Tasarım</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Modern estetik ve kullanıcı dostu arayüz tasarımı.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="400">
+            <i class="fas fa-mobile-screen"></i>
+            <h3>Tam Uyumlu Mobil Tasarım</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Tüm cihazlarda kusursuz çalışan responsive yapı.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="500">
+            <i class="fas fa-briefcase"></i>
+            <h3>Hizmetler ve Uzmanlık Alanları</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Hizmetlerinizi en iyi şekilde sergileyecek özel bölümler.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="600">
+            <i class="fas fa-envelope-open-text"></i>
+            <h3>İletişim Formu</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Müşterilerinizin size kolayca ulaşabilmesi için güvenli formlar.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="700">
+            <i class="fas fa-newspaper"></i>
+            <h3>Blog / Haber Bölümü</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">İçerik pazarlaması ve SEO için dinamik blog altyapısı.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="800">
+            <i class="fas fa-star"></i>
+            <h3>Müşteri Referansları</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Güven aşılayan referans ve yorum sergileme alanı.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="900">
+            <i class="fas fa-shield-halved"></i>
+            <h3>SSL ve SEO</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Arama motoru dostu ve yüksek güvenlikli altyapı.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="1000">
+            <i class="fas fa-share-nodes"></i>
+            <h3>Sosyal Medya Entegrasyonu</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Sosyal ağlarınızla tam uyumlu bağlantı ve paylaşım.</p>
+          </div>
+          <div class="grid-item" data-aos="zoom-in" data-aos-delay="1100">
+            <i class="fas fa-wrench"></i>
+            <h3>Güncelleme ve Bakım</h3>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Ömür boyu destek ve düzenli sistem güncellemeleri.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Price and Action -->
+    <div class="product-sidebar" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+      <div class="glass-panel price-box">
+        <h3 class="price-title">KDV Dahil Fiyat</h3>
+        <div class="price-amount">6.500 ₺</div>
+        <p class="price-desc">(Tek Seferlik Ödeme)</p>
+
+        <ul class="feature-list">
+          <li><i class="fas fa-check-circle"></i> Google Harita Kaydı</li>
+          <li><i class="fas fa-check-circle"></i> Google SEO Optimizasyonu</li>
+          <li><i class="fas fa-check-circle"></i> 5 Adet Kurumsal E-Posta</li>
+          <li><i class="fas fa-check-circle"></i> .com.tr Alan Adı Hediye</li>
+          <li><i class="fas fa-check-circle"></i> Premium Sunucu Hediye</li>
+          <li><i class="fas fa-check-circle"></i> SSL Sertifikası Hediye</li>
+          <li><i class="fas fa-check-circle"></i> Adınıza Faturalı</li>
+          <li><i class="fas fa-check-circle"></i> 12 Taksit İmkanı</li>
+        </ul>
+
+        <div class="btn-group">
+          <!-- DEMO SİTE: /demo/[id]/ -->
+          <a href="../../../demo/108/" class="btn btn-outline" target="_blank">
+            <i class="fas fa-desktop"></i> DEMO SİTE
+          </a>
+          <!-- SATIN AL: /yazilimlar/iletisim/ -->
+          <a href="../../../yazilimlar/iletisim/" class="btn btn-primary">
+            <i class="fas fa-shopping-cart"></i> SATIN AL
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Server Section -->
+  <section class="container server-section" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="50">
+    <h2>Yüksek Performans, Kesintisiz Hizmet</h2>
+    <p>Sizin İçin En Uygun Performanslı Premium Sunucularda Web Sitenizi Yayınlıyoruz.</p>
+    <div class="server-icons">
+      <i class="fas fa-server"></i>
+      <i class="fas fa-microchip"></i>
+      <i class="fas fa-network-wired"></i>
+      <i class="fas fa-database"></i>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo">
+        <a href="https://nurullahkartal.com.tr"><img src="../../../nklogo.png" alt="Nurullah Kartal Logo"></a>
+      </div>
+      <p class="copyright">Copyright © 2026 Nurullah Kartal | Digital Architect. Tüm Hakları Saklıdır.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      once: true
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
