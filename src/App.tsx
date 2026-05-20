@@ -14,11 +14,23 @@ export default function App() {
   
   // Theme State
   const [theme, setTheme] = useState<'light' | 'dark'>(() => {
-    if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('theme');
-      if (saved === 'light' || saved === 'dark') return saved;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const saved = window.localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') return saved;
+      }
+    } catch (e) {
+      console.warn('localStorage is not available for reading theme:', e);
     }
+
+    try {
+      if (typeof window !== 'undefined' && window.matchMedia) {
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+    } catch (e) {
+      console.warn('matchMedia is not available:', e);
+    }
+
     return 'light';
   });
 
@@ -29,7 +41,13 @@ export default function App() {
     } else {
       document.documentElement.classList.remove('dark');
     }
-    localStorage.setItem('theme', theme);
+    try {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        window.localStorage.setItem('theme', theme);
+      }
+    } catch (e) {
+      console.warn('localStorage is not available for writing theme:', e);
+    }
   }, [theme]);
 
   // Dynamic Browser Tab Title Updater
