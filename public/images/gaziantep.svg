@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdba74" />
+      <stop offset="50%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#c2410c" />
+    </linearGradient>
+    <linearGradient id="castle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="100%" stop-color="#7c2d12" />
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#431407" />
+      <stop offset="100%" stop-color="#1c0702" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky background -->
+  <rect width="400" height="300" fill="url(#sky)" />
+
+  <!-- Sun -->
+  <circle cx="280" cy="140" r="45" fill="#fef08a" opacity="0.9" filter="drop-shadow(0 0 15px #fde047)" />
+
+  <!-- Silhouette Birds -->
+  <path d="M 80,60 Q 85,55 90,60 Q 95,55 100,60" fill="none" stroke="#7c2d12" stroke-width="2" stroke-linecap="round" />
+  <path d="M 120,70 Q 123,67 126,70 Q 129,67 132,70" fill="none" stroke="#7c2d12" stroke-width="1.5" stroke-linecap="round" />
+  <path d="M 60,80 Q 64,75 68,80 Q 72,75 76,80" fill="none" stroke="#7c2d12" stroke-width="1.5" stroke-linecap="round" />
+
+  <!-- Gaziantep Castle Silhouette / Ancient Fort -->
+  <!-- Left Bastion -->
+  <rect x="30" y="150" width="40" height="90" rx="3" fill="url(#castle)" />
+  <path d="M 25,150 L 75,150 L 70,140 L 30,140 Z" fill="#9a3412" />
+  <rect x="37" y="165" width="8" height="18" rx="2" fill="#431407" />
+  <rect x="55" y="165" width="8" height="18" rx="2" fill="#431407" />
+  
+  <!-- Connecting Wall -->
+  <rect x="70" y="170" width="100" height="70" fill="url(#castle)" />
+  <path d="M 70,170 H 170 V 163 H 160 V 170 H 150 V 163 H 140 V 170 H 130 V 163 H 120 V 170 H 110 V 163 H 100 V 170 H 90 V 163 H 80 V 170 Z" fill="#9a3412" />
+
+  <!-- Main Arch / Portal Bastion -->
+  <rect x="170" y="130" width="70" height="110" rx="4" fill="url(#castle)" />
+  <path d="M 165,130 L 245,130 L 240,120 L 170,120 Z" fill="#9a3412" />
+  <!-- Portal Gate -->
+  <path d="M 188,240 V 195 A 17,17 0 0 1 222,195 V 240 Z" fill="#431407" />
+  <rect x="202" y="150" width="6" height="20" rx="1" fill="#431407" />
+
+  <!-- Right Bastion & Towers -->
+  <rect x="240" y="160" width="50" height="80" rx="3" fill="url(#castle)" />
+  <path d="M 235,160 H 295 L 290,152 H 240 Z" fill="#9a3412" />
+  <rect x="250" y="175" width="10" height="20" rx="2" fill="#431407" />
+  <rect x="270" y="175" width="10" height="20" rx="2" fill="#431407" />
+
+  <!-- Right Wall Extension -->
+  <path d="M 290,180 L 370,195 L 370,240 L 290,240 Z" fill="url(#castle)" />
+
+  <!-- Ground hills & terrain -->
+  <path d="M -20,230 Q 100,200 240,225 T 420,220 L 420,310 L -20,310 Z" fill="url(#ground)" />
+  <path d="M -10,250 Q 150,235 300,250 T 410,245 L 410,310 L -10,310 Z" fill="#1c0702" opacity="0.8" />
+
+  <!-- Decorative Oriental Lantern Silhouette -->
+  <line x1="330" y1="20" x2="330" y2="70" stroke="#7c2d12" stroke-width="2" />
+  <path d="M 315,70 H 345 L 340,60 H 320 Z" fill="#7c2d12" />
+  <path d="M 315,70 L 320,105 H 340 L 345,70 Z" fill="#fde047" stroke="#7c2d12" stroke-width="2" />
+  <path d="M 320,105 L 330,118 L 340,105 Z" fill="#7c2d12" />
+</svg>

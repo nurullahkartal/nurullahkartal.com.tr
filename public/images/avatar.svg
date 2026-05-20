@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffedd5" />
+      <stop offset="100%" stop-color="#fed7aa" />
+    </linearGradient>
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <linearGradient id="jacketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="96" fill="url(#bgGrad)" />
+
+  <!-- Back Hair -->
+  <path d="M70,80 Q100,50 130,80 Q135,110 130,120 Q100,105 70,120 Q65,110 70,80 Z" fill="url(#hairGrad)" />
+
+  <!-- Ears -->
+  <circle cx="68" cy="105" r="8" fill="#fdba74" />
+  <circle cx="132" cy="105" r="8" fill="#fdba74" />
+
+  <!-- Face / Head -->
+  <path d="M72,90 Q70,130 100,135 Q130,130 128,90 C128,75 72,75 72,90 Z" fill="url(#faceGrad)" />
+
+  <!-- Hair Front -->
+  <path d="M70,85 C75,70 90,62 105,65 C115,67 125,72 130,80 C132,84 130,90 125,92 C120,94 115,88 110,86 C100,82 90,92 78,92 C74,92 71,89 70,85 Z" fill="url(#hairGrad)" />
+
+  <!-- Spectacles / Glasses (Modern Tech Vibe) -->
+  <rect x="74" y="93" width="20" height="14" rx="4" fill="none" stroke="#0f172a" stroke-width="3" />
+  <rect x="106" y="93" width="20" height="14" rx="4" fill="none" stroke="#0f172a" stroke-width="3" />
+  <line x1="94" y1="100" x2="106" y2="100" stroke="#0f172a" stroke-width="3" />
+
+  <!-- Eyes behind glasses -->
+  <circle cx="84" cy="100" r="2" fill="#0f172a" />
+  <circle cx="116" cy="100" r="2" fill="#0f172a" />
+
+  <!-- Eyebrows -->
+  <path d="M75,90 Q85,85 92,90" fill="none" stroke="url(#hairGrad)" stroke-width="2" stroke-linecap="round" />
+  <path d="M108,90 Q115,85 125,90" fill="none" stroke="url(#hairGrad)" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Nose -->
+  <path d="M100,105 L97,115 L103,115 Z" fill="#f87171" opacity="0.15" />
+  <path d="M100,105 Q98,114 100,115" fill="none" stroke="#fba556" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Smile -->
+  <path d="M90,122 Q100,128 110,122" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round" />
+
+  <!-- Shirt -->
+  <path d="M80,135 Q100,150 120,135 L125,170 Q100,175 75,170 Z" fill="url(#shirtGrad)" />
+  <path d="M100,138 L95,148 L105,148 Z" fill="#475569" />
+
+  <!-- Jacket (Modern Professional Vibe) -->
+  <path d="M60,150 Q80,140 92,152 L80,190 H45 Q40,165 60,150 Z" fill="url(#jacketGrad)" />
+  <path d="M140,150 Q120,140 108,152 L120,190 H155 Q160,165 140,150 Z" fill="url(#jacketGrad)" />
+</svg>

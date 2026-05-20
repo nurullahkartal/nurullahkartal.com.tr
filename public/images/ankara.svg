@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ankSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="40%" stop-color="#311042" />
+      <stop offset="85%" stop-color="#701a75" />
+      <stop offset="100%" stop-color="#a21caf" />
+    </linearGradient>
+    <linearGradient id="buildingGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4a044e" />
+      <stop offset="100%" stop-color="#1e0022" />
+    </linearGradient>
+    <linearGradient id="foreGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="300" fill="url(#ankSky)" />
+
+  <!-- Stars -->
+  <circle cx="50" cy="40" r="1" fill="#ffffff" opacity="0.8" />
+  <circle cx="120" cy="60" r="1.5" fill="#ffffff" opacity="0.6" />
+  <circle cx="180" cy="30" r="0.8" fill="#ffffff" opacity="0.9" />
+  <circle cx="230" cy="80" r="1.2" fill="#ffffff" opacity="0.5" />
+  <circle cx="340" cy="50" r="1" fill="#ffffff" opacity="0.7" />
+
+  <!-- Crescent Moon -->
+  <path d="M 310,40 A 20,20 0 1,0 338,62 A 16,16 0 1,1 310,40 Z" fill="#fae8ff" opacity="0.95" filter="drop-shadow(0 0 8px #d8b4fe)" />
+
+  <!-- Distant Mountains/Hills -->
+  <path d="M -20,200 L 60,170 L 140,190 L 220,165 L 310,185 L 420,150 L 420,300 L -20,300 Z" fill="#4a1259" opacity="0.4" />
+
+  <!-- Midground City Buildings & Towers -->
+  <rect x="30" y="160" width="30" height="90" fill="url(#buildingGrad)" />
+  <rect x="75" y="140" width="45" height="110" fill="url(#buildingGrad)" />
+  <rect x="130" y="180" width="35" height="70" fill="url(#buildingGrad)" />
+
+  <!-- Atakule Tower Silhouette -->
+  <!-- Base column -->
+  <rect x="235" y="100" width="10" height="120" fill="url(#buildingGrad)" />
+  <rect x="237" y="100" width="6" height="120" fill="#f472b6" opacity="0.15" />
+  <!-- Lower observatory ring -->
+  <ellipse cx="240" cy="100" rx="14" ry="4" fill="url(#buildingGrad)" />
+  <!-- Upper sphere / dome -->
+  <path d="M 224,96 C 224,80 256,80 256,96 Z" fill="url(#buildingGrad)" />
+  <ellipse cx="240" cy="96" rx="16" ry="3" fill="#d8b4fe" opacity="0.8" />
+  <!-- Spire tip -->
+  <line x1="240" y1="80" x2="240" y2="65" stroke="url(#buildingGrad)" stroke-width="2" />
+  <circle cx="240" cy="65" r="2" fill="#f43f5e" /> <!-- Red beacon light -->
+
+  <!-- Elegant Anıtkabir Column Structure Representation -->
+  <g transform="translate(140, 185)">
+    <!-- Base Platform -->
+    <rect x="-10" y="30" width="80" height="12" fill="url(#foreGrad)" />
+    <!-- Pillars -->
+    <rect x="0" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="10" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="20" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="30" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="40" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="50" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <rect x="60" y="10" width="5" height="20" fill="url(#foreGrad)" />
+    <!-- Roof -->
+    <rect x="-5" y="4" width="70" height="6" fill="url(#foreGrad)" />
+  </g>
+
+  <!-- Foreground Landscape & Trees -->
+  <path d="M -20,240 Q 120,215 260,235 T 420,225 L 420,310 L -20,310 Z" fill="url(#foreGrad)" />
+  
+  <!-- Stylized Pine Trees (Ankara's green areas) -->
+  <polygon points="40,240 45,225 50,240" fill="#1e293b" />
+  <polygon points="38,245 45,230 52,245" fill="#0f172a" />
+  
+  <polygon points="330,230 336,210 342,230" fill="#1e293b" />
+  <polygon points="326,238 336,218 346,238" fill="#0f172a" />
+  
+  <polygon points="350,235 355,218 360,235" fill="#1e293b" />
+</svg>

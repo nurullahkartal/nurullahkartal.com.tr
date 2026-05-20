@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="marSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="35%" stop-color="#fde047" />
+      <stop offset="70%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="mardinStone" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#92400e" />
+    </linearGradient>
+    <linearGradient id="plains" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#854d0e" />
+      <stop offset="100%" stop-color="#451a03" />
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="400" height="300" fill="url(#marSky)" />
+
+  <!-- Mesopotamian Sun (Golden and Grand) -->
+  <circle cx="200" cy="110" r="55" fill="#fffbeb" opacity="0.85" filter="drop-shadow(0 0 20px #fef08a)" />
+
+  <!-- Doves (symbol of Mardin peace) -->
+  <path d="M 120,60 Q 125,52 132,58 Q 138,52 144,60 C 137,64 127,64 120,60 Z" fill="#fffbeb" opacity="0.9" />
+  <path d="M 260,75 Q 264,68 270,73 Q 275,68 280,75 C 274,78 266,78 260,75 Z" fill="#fffbeb" opacity="0.8" />
+
+  <!-- Distant Flat Plains of Mesopotamia -->
+  <path d="M -20,180 H 420 V 300 H -20 Z" fill="url(#plains)" opacity="0.35" />
+  <path d="M -20,195 Q 150,185 420,195 V 300 H -20 Z" fill="url(#plains)" opacity="0.6" />
+
+  <!-- Mardin Layered Stone Architecture (Terraces Climbing the Mountain) -->
+  <!-- Low layer houses -->
+  <rect x="20" y="210" width="60" height="40" fill="url(#mardinStone)" />
+  <path d="M 20,210 H 80 L 70,205 H 30 Z" fill="#78350f" />
+  <!-- Arched Windows -->
+  <path d="M 35,230 V 220 A 5,5 0 0 1 45,220 V 230 Z" fill="#451a03" />
+  <path d="M 55,230 V 220 A 5,5 0 0 1 65,220 V 230 Z" fill="#451a03" />
+
+  <rect x="70" y="215" width="80" height="40" fill="url(#mardinStone)" />
+  <path d="M 70,215 H 150 L 140,210 H 80 Z" fill="#78350f" />
+  <path d="M 90,235 V 225 A 6,6 0 0 1 102,225 V 235 Z" fill="#451a03" />
+  <path d="M 118,235 V 225 A 6,6 0 0 1 130,225 V 235 Z" fill="#451a03" />
+
+  <!-- Upper layer houses (receding up) -->
+  <rect x="40" y="170" width="50" height="42" fill="url(#mardinStone)" />
+  <path d="M 40,170 H 90 L 85,165 H 45 Z" fill="#78350f" />
+  <path d="M 50,190 V 182 A 4,4 0 0 1 58,182 V 190 Z" fill="#451a03" />
+  <path d="M 72,190 V 182 A 4,4 0 0 1 80,182 V 190 Z" fill="#451a03" />
+
+  <rect x="110" y="180" width="70" height="40" fill="url(#mardinStone)" />
+  <path d="M 110,180 H 180 L 175,175 H 115 Z" fill="#78350f" />
+  <rect x="130" y="195" width="12" height="25" fill="#451a03" /> <!-- Door -->
+  <path d="M 155,195 V 190 A 4,4 0 0 1 163,190 V 195 Z" fill="#451a03" />
+
+  <!-- Iconic Minaret silhouette (Mardin Ulu Camii Minaret) -->
+  <rect x="260" y="120" width="16" height="100" fill="url(#mardinStone)" />
+  <!-- Carvings details -->
+  <rect x="258" y="125" width="20" height="6" fill="#78350f" />
+  <rect x="258" y="150" width="20" height="6" fill="#78350f" />
+  <rect x="258" y="175" width="20" height="6" fill="#78350f" />
+  <!-- Balcony -->
+  <rect x="252" y="120" width="32" height="8" rx="2" fill="#78350f" />
+  <!-- Minaret Dome/Cap -->
+  <path d="M 256,120 L 268,95 L 280,120 Z" fill="url(#mardinStone)" />
+  <circle cx="268" cy="93" r="2" fill="#fef08a" />
+
+  <!-- Landscape foreground ridge -->
+  <path d="M -20,245 Q 180,225 420,245 L 420,310 H -20 Z" fill="url(#plains)" />
+  <path d="M -10,260 Q 200,245 410,260 L 410,310 H -10 Z" fill="#451a03" opacity="0.6" />
+</svg>
