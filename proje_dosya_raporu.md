@@ -37,18 +37,15 @@ Sitenin çalışmasını sağlayan modern React tabanlı uygulama mimarisine ait
 
 ---
 
-## 3. Aktif Statik Web Modülleri ve Kurumsal Varlıklar
-Sitenizin marka değerini artıran kurumsal dijital varlıklar ve entegre edilmiş aktif web modülleridir:
+## 3. Tarihsel Arşiv Dosyaları (Düzenli Klasör Yapısı)
+Eski WordPress tabanlı sitenizden kalan ve tarihsel yedek niteliği taşıyan tüm varlıklar, kök dizinde dağınıklık yaratmaması için tek bir `arsiv/` klasörü altında toplanmıştır:
 
-*   **`public/images/nklogo.png`**: Navigasyon menüsünde ve sitede marka kimliğini temsil etmek amacıyla kullanılan, yüksek kalitedeki kurumsal logodur.
-*   **`public/doviz/`**, **`public/zerdoviz/`**, **`public/yazilimlar/`**: Projeye tam entegre edilmiş, kullanıcılara dinamik ve canlı finansal araçlar ve şablonlar sunan aktif web modülleridir.
-*   **`index.old.html`**: Eski sistemin ana sayfasıdır. Eski referansların, linklerin ve yapıların kaybolmaması adına güvenle saklanan bir arşiv kopyasıdır.
-*   **`files/`**: Çeşitli indirme dosyalarını, dökümanları veya statik varlıkları barındıran arşiv klasörüdür.
-*   **`galeri/` & `galeri/galeri.html`**: Eski fotoğraf galerisine ait yedek koddur.
-*   **`mass_modernize.py`**: Sayfaları modernize etmek veya güncellemek için kullanılan Python yardımcı betiğidir.
-*   **`template_light.html`**: Sayfalar için kullanılan hafif şablondur.
+*   **`arsiv/`**: Eski sistem yedeklerinin toplandığı ana arşiv dizinidir.
+    *   **`arsiv/index.old.html`**: Eski WordPress tabanlı sitenin ana sayfa yedek HTML kodudur.
+    *   **`arsiv/files/`**: Eski siteye ait stil, font, eski JS ve resim yedeğini barındıran arşiv klasörüdür.
+    *   **`arsiv/galeri/`**: Eski jQuery tabanlı fotoğraf galerisine ait dosyaları barındıran arşiv klasörüdür.
 
-*Not: Eski `iletisim/` dizini, barındırdığı abartılı yazılım ajansı dili ("NK YAZILIM") nedeniyle tamamen silinmiş ve iletişim kanalları (E-posta, Lokasyon, Sosyal Linkler) yeni, samimi kişisel kimliğinize uygun olarak React Hakkımda sayfasına başarıyla eritilmiştir.*
+*Not: Eski `iletisim/` dizini, barındırdığı abartılı yazılım ajansı dili ("NK YAZILIM") nedeniyle tamamen silinmiş; kök dizindeki gereksiz/yinelenen ve atıl dosyalar (`demo/`, `resources/`, `nurullahkartal-blog/`, `mass_modernize.py`, `template_light.html`) ise tamamen temizlenerek geliştirme ortamı sadeleştirilmiştir.*
 
 ---
 
