@@ -15,14 +15,14 @@ Sitenin çalışmasını sağlayan modern React tabanlı uygulama mimarisine ait
 ### Klasörler:
 *   **`src/`**: Uygulamanın tüm kaynak kodlarını barındıran ana klasördür.
     *   **`src/main.tsx`**: Uygulamanın giriş noktasıdır; React uygulamasını `index.html` içindeki kök elemana bağlar.
-    *   **`src/App.tsx`**: Tüm sayfa geçişlerini (Ana Sayfa, Fotoğraflarım, Dijital Gelişim & Hobiler, Hakkımda), tema yönetimini (Dark Mode) ve galeri/portfolyo görsel arayüzünü barındıran **ana uygulama bileşenidir**. Dijital Gelişim sekmesinde eski statik araçları ve Hakkımda sayfasında yeni eriyen iletişim alanını aktif olarak sunar.
+    *   **`src/App.tsx`**: Tüm sayfa geçişlerini (Ana Sayfa, Dijital Gelişim & Hobiler, Hakkımda), tema yönetimini (Dark Mode) ve arayüz bileşenlerini barındıran **ana uygulama bileşenidir**. Dijital Gelişim sekmesinde eski statik araçları ve Hakkımda sayfasında yeni eriyen iletişim alanını aktif olarak sunar.
     *   **`src/index.css`**: Tailwind CSS v4 direktiflerini içeren stil dosyasıdır.
     *   **`src/data/`**: Sitede kullanılan statik verileri barındırır.
-        *   **`src/data/siteData.ts`**: Fotoğraf galerisindeki resimlerin bilgilerini (`Photo` şeması), hobi projelerini (`Project` şeması) ve aktif edilen dijital web araçlarının verilerini (`WebTool` şeması) tutan veri dosyasıdır.
+        *   **`src/data/siteData.ts`**: Hobi projelerini (`Project` şeması) ve aktif edilen dijital web araçlarının verilerini (`WebTool` şeması) tutan veri dosyasıdır. (Kişisel fotoğraflar ön yüzden tamamen gizlenmiş olup, doğrudan site haritası üzerinden arama motorlarına sunulmaktadır).
     *   **`src/assets/`**: Uygulama içinde kullanılan yerel görsel varlıkları barındırır.
 *   **`public/`**: Tarayıcıya doğrudan servis edilen statik varlıkları barındırır. Vite derleme esnasında bu dosyalara dokunmaz, aynen sunar.
     *   **`public/favicon.svg`**: Sitenin tarayıcı sekmesindeki ikonudur.
-    *   **`public/images/`**: Fotoğraf galerisinde, karşılama alanında ve navigasyon header'ında sergilenen yüksek kaliteli görsel varlıkları barındırır. Nurullah Kartal markasını temsil eden kurumsal **`nklogo.png`** görseli de bu klasördedir.
+    *   **`public/images/`**: Karşılama alanında ve navigasyon header'ında sergilenen yüksek kaliteli görsel varlıkları ve `sitemap.xml` üzerinden Google botlarına sunulan kişisel fotoğrafları barındırır. Nurullah Kartal markasını temsil eden kurumsal **`nklogo.png`** görseli de bu klasördedir.
     *   **`public/doviz/`**: Portfolyoda aktif olarak sunulan, farklı para birimleri arasında anlık ve hassas dönüşüm sağlayan finansal hesaplama ve çevrim modülüdür.
     *   **`public/zerdoviz/`**: Portfolyoda aktif olarak sunulan, anlık piyasa kurlarını gerçek zamanlı izleme ve analiz etme amaçlı Zerdöviz finansal kur takip modülüdür.
     *   **`public/yazilimlar/`**: Portfolyoda aktif olarak sunulan, sektörel ve modern kurumsal web arayüz şablonlarını barındıran hazır web tasarım portalıdır.
