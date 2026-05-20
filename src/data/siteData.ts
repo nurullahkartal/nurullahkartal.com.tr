@@ -54,13 +54,6 @@ export const projects: Project[] = [
     description: "Teknolojiye meraklıyım. Boş zamanlarımda tamamen hobi amaçlı ve kendimi denemek için kurguladığım, yapay zeka entegrasyonu üzerine fikir ve SEO aşamalarıyla uğraştığım küçük bir dijital çalışma.",
     tech: ["React", "TypeScript", "Vite"],
     githubUrl: "https://github.com/nurullahkartal"
-  },
-  {
-    id: "kurdish-name",
-    title: "KurdishName Platformu",
-    description: "Boş zamanlarımda tamamen hobi amaçlı ve kendimi denemek için hayata geçirdiğim, SEO mimarisi, fikir aşamaları ve çok dilli isim veritabanı yapısıyla ilgilendiğim küçük bir dijital arşiv çalışması.",
-    tech: ["React", "TypeScript", "Tailwind CSS"],
-    liveUrl: "https://kurdishname.com"
   }
 ];
 
