@@ -182,8 +182,8 @@ export default function App() {
                     <div className="absolute -inset-1.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full blur-sm opacity-30 group-hover:opacity-60 transition duration-500"></div>
                     <div className="relative w-40 h-40 sm:w-48 sm:h-48 rounded-full overflow-hidden border-4 border-white dark:border-slate-900 bg-slate-100 dark:bg-slate-800 shadow-md group-hover:scale-102 transition duration-300">
                       <img 
-                        src="/images/avatar.svg" 
-                        alt="Nurullah Kartal" 
+                        src="/images/profil.jpg" 
+                        alt="Nurullah Kartal - Ön Muhasebe, Lojistik ve Banka Operasyonları Uzmanı" 
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -230,7 +230,7 @@ export default function App() {
                     >
                       <img 
                         src={photo.url} 
-                        alt={photo.title}
+                        alt={`Nurullah Kartal - ${photo.title} (${photo.location})`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         loading="lazy"
                       />
@@ -264,7 +264,7 @@ export default function App() {
                   >
                     <img 
                       src={photo.url} 
-                      alt={photo.title}
+                      alt={`Nurullah Kartal - ${photo.title} (${photo.location})`}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       loading="lazy"
                     />

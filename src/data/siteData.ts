@@ -25,25 +25,46 @@ export interface WebTool {
 
 export const photos: Photo[] = [
   {
-    id: "gaziantep-1",
-    url: "/images/gaziantep.svg",
-    title: "Tarihi Bakırcılar Çarşısı Esintileri",
+    id: "nurullah-takim-elbise",
+    url: "/images/takımelbise.jpeg",
+    title: "Nurullah Kartal - Takım Elbiseli Profesyonel Ön Muhasebe ve Operasyon Uzmanı Profili",
+    location: "Gaziantep",
+    date: "Aralık 2025"
+  },
+  {
+    id: "nurullah-devfest",
+    url: "/images/devfest.jpeg",
+    title: "Nurullah Kartal - GDG Gaziantep DevFest 2025 Teknoloji ve Yazılım Geliştiricileri Etkinliği",
+    location: "Gaziantep",
+    date: "Aralık 2025"
+  },
+  {
+    id: "nurullah-kaban",
+    url: "/images/kaban.jpeg",
+    title: "Nurullah Kartal - Kışlık Kombini ile Dış Saha Lojistik ve İletişim Takipleri",
+    location: "Gaziantep",
+    date: "Ocak 2026"
+  },
+  {
+    id: "nurullah-profil-is",
+    url: "/images/profil.jpg",
+    title: "Nurullah Kartal - Profesyonel Ofis ve İş Hayatı Ön Muhasebe Profili",
     location: "Gaziantep",
     date: "Eylül 2025"
   },
   {
-    id: "ankara-1",
-    url: "/images/ankara.svg",
-    title: "Akşam Alacakaranlığında Başkent",
-    location: "Ankara",
-    date: "Kasım 2025"
+    id: "gaziantep-manzara-1",
+    url: "/images/manzara.jpeg",
+    title: "Nurullah Kartal Kadrajından - Tarihi Gaziantep Sokakları ve Kültürel Gezi",
+    location: "Gaziantep",
+    date: "Ekim 2025"
   },
   {
-    id: "mardin-1",
-    url: "/images/mardin.svg",
-    title: "Güneşin Altında Tarihi Mardin Evleri",
+    id: "gaziantep-manzara-2",
+    url: "/images/manzara2.jpeg",
+    title: "Nurullah Kartal Kadrajından - Şehirlerarası Lojistik Rotası ve Taş Evler",
     location: "Mardin",
-    date: "Nisan 2026"
+    date: "Kasım 2025"
   }
 ];
 
