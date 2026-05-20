@@ -191,25 +191,25 @@ export default function App() {
 
               {/* Hızlı Özet (Quick Facts) Grid */}
               <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-xl text-center space-y-1">
-                  <div className="text-2xl select-none">🏢</div>
+                <div className="p-5 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl text-center space-y-2 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                  <div className="text-3xl select-none">🏢</div>
                   <h3 className="font-bold text-slate-950 dark:text-white text-sm">Saha Deneyimi</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">4 Yıl Aktif Ön Muhasebe & Lojistik</p>
+                  <p className="text-xs text-slate-650 dark:text-slate-450 font-medium">4 Yıl Ön Muhasebe & Lojistik Veri Girişi</p>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-xl text-center space-y-1">
-                  <div className="text-2xl select-none">📚</div>
-                  <h3 className="font-bold text-slate-950 dark:text-white text-sm">Eğitim</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">2 AÖF Lisans/Önlisans & MTAL Mezunu</p>
+                <div className="p-5 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl text-center space-y-2 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                  <div className="text-3xl select-none">🎓</div>
+                  <h3 className="font-bold text-slate-950 dark:text-white text-sm">Akademik Eğitim</h3>
+                  <p className="text-xs text-slate-650 dark:text-slate-450 font-medium">Atatürk Üniversitesi & Anadolu Üniversitesi</p>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-xl text-center space-y-1">
-                  <div className="text-2xl select-none">💻</div>
-                  <h3 className="font-bold text-slate-950 dark:text-white text-sm">ERP & Programlar</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Mikro, Logo, Nes Portal, MS Excel</p>
+                <div className="p-5 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl text-center space-y-2 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                  <div className="text-3xl select-none">💻</div>
+                  <h3 className="font-bold text-slate-950 dark:text-white text-sm">Uzmanlık & ERP</h3>
+                  <p className="text-xs text-slate-650 dark:text-slate-450 font-medium">Mikro, Logo, Nes Portal, MS Excel</p>
                 </div>
-                <div className="p-4 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-xl text-center space-y-1">
-                  <div className="text-2xl select-none">📍</div>
+                <div className="p-5 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl text-center space-y-2 shadow-xs hover:shadow-md hover:-translate-y-0.5 transition-all duration-300">
+                  <div className="text-3xl select-none">📍</div>
                   <h3 className="font-bold text-slate-950 dark:text-white text-sm">Lokasyon</h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400">Gaziantep Merkezli</p>
+                  <p className="text-xs text-slate-650 dark:text-slate-450 font-medium">Gaziantep Merkezli</p>
                 </div>
               </section>
             </div>
@@ -231,25 +231,46 @@ export default function App() {
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {projects.map(project => (
-                    <div key={project.id} className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs flex flex-col justify-between hover:shadow-sm transition-all duration-200">
-                      <div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{project.title}</h3>
-                        <p className="text-slate-600 dark:text-slate-350 text-sm mt-2 leading-relaxed">{project.description}</p>
+                    <div key={project.id} className="p-6 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl shadow-xs hover:shadow-md hover:border-indigo-500/40 dark:hover:border-indigo-400/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-2xl select-none">🚀</span>
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">{project.title}</h3>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-350 text-sm leading-relaxed">{project.description}</p>
                       </div>
-                      <div className="mt-6">
+                      <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60">
                         <div className="flex flex-wrap gap-1 mb-4">
                           {project.tech.map(t => (
                             <span 
                               key={t} 
-                              className="px-2 py-0.5 bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 text-xs rounded border border-slate-100 dark:border-slate-800"
+                              className="px-2.5 py-0.5 bg-slate-50 dark:bg-slate-950 text-slate-500 dark:text-slate-450 text-xs rounded border border-slate-100 dark:border-slate-850 font-medium"
                             >
                               {t}
                             </span>
                           ))}
                         </div>
-                        <div className="flex gap-4 text-xs font-semibold">
-                          {project.githubUrl && <a href={project.githubUrl} target="_blank" rel="noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline">GitHub</a>}
-                          {project.liveUrl && <a href={project.liveUrl} target="_blank" rel="noreferrer" className="text-emerald-600 dark:text-emerald-400 hover:underline">Canlı Önizleme →</a>}
+                        <div className="flex gap-3 text-xs font-semibold">
+                          {project.githubUrl && (
+                            <a 
+                              href={project.githubUrl} 
+                              target="_blank" 
+                              rel="noreferrer" 
+                              className="px-3.5 py-1.5 border border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-semibold transition-all cursor-pointer"
+                            >
+                              GitHub
+                            </a>
+                          )}
+                          {project.liveUrl && (
+                            <a 
+                              href={project.liveUrl} 
+                              target="_blank" 
+                              rel="noreferrer" 
+                              className="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg text-xs font-semibold shadow-xs hover:shadow-sm transition-all cursor-pointer"
+                            >
+                              Canlı Önizleme →
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -265,24 +286,32 @@ export default function App() {
                 </h2>
                 <div className="grid sm:grid-cols-2 gap-6">
                   {webTools.map(tool => (
-                    <div key={tool.id} className="p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl shadow-xs flex flex-col justify-between hover:shadow-sm transition-all duration-200">
-                      <div>
-                        <h3 className="text-xl font-bold text-slate-900 dark:text-white">{tool.title}</h3>
-                        <p className="text-slate-600 dark:text-slate-350 text-sm mt-2 leading-relaxed">{tool.description}</p>
+                    <div key={tool.id} className="p-6 bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/80 rounded-2xl shadow-xs hover:shadow-md hover:border-indigo-500/40 dark:hover:border-indigo-400/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2.5">
+                          <span className="text-2xl select-none">⚡</span>
+                          <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">{tool.title}</h3>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-350 text-sm leading-relaxed">{tool.description}</p>
                       </div>
-                      <div className="mt-6">
+                      <div className="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60">
                         <div className="flex flex-wrap gap-1 mb-4">
                           {tool.tech.map(t => (
                             <span 
                               key={t} 
-                              className="px-2 py-0.5 bg-slate-50 dark:bg-slate-955 text-slate-500 dark:text-slate-400 text-xs rounded border border-slate-100 dark:border-slate-800"
+                              className="px-2.5 py-0.5 bg-slate-50 dark:bg-slate-950 text-slate-500 dark:text-slate-450 text-xs rounded border border-slate-100 dark:border-slate-850 font-medium"
                             >
                               {t}
                             </span>
                           ))}
                         </div>
                         <div className="text-xs font-semibold">
-                          <a href={tool.url} target="_blank" rel="noreferrer" className="text-indigo-600 dark:text-indigo-400 hover:underline inline-flex items-center gap-1">
+                          <a 
+                            href={tool.url} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white rounded-lg text-sm font-semibold shadow-xs hover:shadow-sm transition-all cursor-pointer"
+                          >
                             Uygulamayı Başlat ⚡
                           </a>
                         </div>
