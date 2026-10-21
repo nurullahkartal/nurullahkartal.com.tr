@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#f8fafc">
+<title>NK DÖVİZ | KÂR - ZARAR</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --bg:#f8fafc; --card:#ffffff; --text:#0f172a; --text-muted:#64748b;
+  --nk-red:#e11d48; --harem-gold:#b45309; --border:rgba(0,0,0,0.06);
+  --up:#16a34a; --down:#dc2626;
+  --up-bg:rgba(22,163,74,.08); --down-bg:rgba(220,38,38,.08);
+}
+[data-theme="dark"]{
+  --bg:#0e0e0e; --card:#181818; --text:#ffffff; --text-muted:#888888;
+  --nk-red:#e11d48; --harem-gold:#c5a059; --border:rgba(255,255,255,0.07);
+  --up:#22c55e; --down:#ef4444;
+  --up-bg:rgba(34,197,94,.12); --down-bg:rgba(239,68,68,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+html,body{min-height:100%}
+body{
+  background:var(--bg); color:var(--text); font-family:'Inter',sans-serif;
+  min-height:100vh; min-height:100dvh;
+  display:flex; flex-direction:column; gap:1.2vh;
+  padding:1.5vh 1.2vw;
+  padding-top:max(1.5vh, env(safe-area-inset-top));
+  padding-bottom:max(1.5vh, env(safe-area-inset-bottom));
+  padding-left:max(1.2vw, env(safe-area-inset-left));
+  padding-right:max(1.2vw, env(safe-area-inset-right));
+  transition:background .4s ease, color .4s ease;
+  overflow-y:auto;
+}
+/* HEADER */
+.header{display:flex;justify-content:space-between;align-items:center;padding:0 1vw;gap:1vw;flex-wrap:wrap}
+.header-left{display:flex;align-items:center;gap:1vw;min-width:0}
+.header-brand img{height:6vh;width:auto;display:block;transition:.3s}
+[data-theme="dark"] .header-brand img{filter:brightness(10)}
+.brand-text{font-family:'Space Grotesk',sans-serif;font-weight:900;letter-spacing:.3vw;font-size:clamp(16px,3vh,34px);text-transform:uppercase;white-space:nowrap}
+.header-right{display:flex;align-items:center;gap:1.5vw}
+#digital-clock{font-size:clamp(22px,5.5vh,58px);font-weight:900;font-family:monospace;letter-spacing:-2px;font-variant-numeric:tabular-nums}
+.theme-switch-wrapper{display:flex;align-items:center;gap:10px;color:var(--text-muted)}
+.theme-switch{display:inline-block;height:3vh;position:relative;width:6vh;min-height:24px;min-width:46px}
+.theme-switch input{display:none}
+.slider{background-color:#ccc;cursor:pointer;position:absolute;inset:0;transition:.4s;border-radius:34px}
+.slider:before{background-color:#fff;bottom:.3vh;content:"";height:2.4vh;min-height:18px;min-width:18px;left:.3vh;position:absolute;transition:.4s;width:2.4vh;border-radius:50%}
+input:checked + .slider{background-color:var(--nk-red)}
+input:checked + .slider:before{transform:translateX(3vh)}
+/* SUMMARY */
+.summary-bar{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  display:grid;grid-template-columns:repeat(3,1fr);overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+.sum-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4vh;padding:1.4vh 1vw;border-right:1px solid var(--border);text-align:center;min-width:0}
+.sum-item:last-child{border-right:none}
+.sum-label{color:var(--harem-gold);font-weight:900;font-size:clamp(9px,1.4vh,15px);letter-spacing:1px;text-transform:uppercase;line-height:1.2}
+.sum-val{font-family:'Space Grotesk',monospace;font-weight:900;font-size:clamp(14px,3.2vh,36px);font-variant-numeric:tabular-nums;line-height:1.1;white-space:nowrap}
+.sum-sub{font-size:clamp(9px,1.4vh,14px);font-weight:800;color:var(--text-muted);font-variant-numeric:tabular-nums}
+/* CARDS */
+.pos-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2vh;flex:1;min-height:0}
+.pos-card{
+  background:var(--card);border:1px solid var(--border);border-radius:20px;
+  display:flex;flex-direction:column;overflow:hidden;min-height:0;
+  box-shadow:0 20px 50px rgba(0,0,0,.05);
+}
+.pc-head{display:flex;justify-content:space-between;align-items:center;padding:1.4vh 1.4vw;border-bottom:1px solid var(--border);gap:1vw}
+.pc-title{display:flex;align-items:center;gap:.9vw;min-width:0}
+.pc-icon{
+  width:clamp(32px,4.6vh,50px);height:clamp(32px,4.6vh,50px);border-radius:14px;
+  display:grid;place-items:center;background:rgba(225,29,72,.08);color:var(--nk-red);
+  font-size:clamp(13px,2vh,20px);flex-shrink:0;
+}
+[data-theme="dark"] .pc-icon{background:rgba(197,160,89,.13);color:var(--harem-gold)}
+.pc-name{font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:clamp(13px,2.1vh,23px);letter-spacing:.5px;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pc-sub{font-size:clamp(8px,1.15vh,12px);font-weight:800;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase}
+.pc-qty{font-family:'Space Grotesk',monospace;font-weight:900;font-size:clamp(16px,2.9vh,32px);font-variant-numeric:tabular-nums;text-align:right;line-height:1;white-space:nowrap;flex-shrink:0}
+.pc-qty span{display:block;font-size:clamp(8px,1.1vh,12px);color:var(--text-muted);letter-spacing:1.5px;margin-top:3px;font-family:'Inter',sans-serif}
+.pc-lines{padding:.8vh 1.4vw;display:flex;flex-direction:column;justify-content:center;flex:1;min-height:0}
+.pc-line{display:flex;justify-content:space-between;align-items:center;gap:1vw;padding:.75vh 0;border-bottom:1px dashed var(--border);font-size:clamp(10px,1.55vh,15px)}
+.pc-line:last-child{border-bottom:none}
+.pc-line span{color:var(--text-muted);font-weight:700;white-space:nowrap}
+.pc-line b{font-family:'Space Grotesk',monospace;font-weight:800;font-variant-numeric:tabular-nums;font-size:clamp(12px,1.9vh,20px);white-space:nowrap;text-align:right}
+.pc-pnl{padding:1.4vh 1.4vw;border-top:1px solid var(--border);text-align:center;transition:background .4s}
+.pc-pnl.profit{background:linear-gradient(180deg,transparent,var(--up-bg))}
+.pc-pnl.loss{background:linear-gradient(180deg,transparent,var(--down-bg))}
+.pnl-label{font-size:clamp(8px,1.2vh,13px);font-weight:900;letter-spacing:2px;color:var(--text-muted);text-transform:uppercase;margin-bottom:.4vh}
+.pnl-value{font-family:'Space Grotesk',monospace;font-weight:900;font-size:clamp(19px,4vh,44px);font-variant-numeric:tabular-nums;line-height:1.05;letter-spacing:-1px;white-space:nowrap}
+.pnl-pct{font-size:clamp(10px,1.6vh,16px);font-weight:800;margin-top:.4vh;font-variant-numeric:tabular-nums;color:var(--text-muted)}
+.pc-raw{padding:.7vh 1.4vw;border-top:1px dashed var(--border);font-size:clamp(7.5px,1.05vh,11px);color:var(--text-muted);font-weight:700;letter-spacing:.3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* RESULT BANNER */
+.result-banner{
+  border-radius:16px;padding:1.4vh 1.5vw;display:flex;align-items:center;justify-content:space-between;
+  gap:1vw;border:1px solid var(--border);background:var(--card);flex-wrap:wrap;transition:background .4s;
+}
+.result-banner.profit{border-color:rgba(22,163,74,.35);background:linear-gradient(90deg,var(--up-bg),transparent)}
+.result-banner.loss{border-color:rgba(220,38,38,.35);background:linear-gradient(90deg,var(--down-bg),transparent)}
+.rb-left{display:flex;align-items:center;gap:1vw;flex-wrap:wrap}
+.rb-label{font-family:'Space Grotesk';font-weight:900;letter-spacing:2px;font-size:clamp(10px,1.5vh,15px);text-transform:uppercase;color:var(--text-muted)}
+.rb-badge{font-weight:900;font-size:clamp(10px,1.4vh,14px);padding:.55vh 1vw;border-radius:999px;letter-spacing:1.5px;color:#fff;background:var(--text-muted)}
+.rb-badge.profit{background:var(--up)}
+.rb-badge.loss{background:var(--down)}
+.rb-right{display:flex;align-items:baseline;gap:1vw;flex-wrap:wrap}
+.rb-value{font-family:'Space Grotesk',monospace;font-weight:900;font-size:clamp(20px,3.6vh,40px);font-variant-numeric:tabular-nums;letter-spacing:-1px;white-space:nowrap}
+.rb-pct{font-size:clamp(11px,1.8vh,18px);font-weight:800;font-variant-numeric:tabular-nums}
+/* FOOTER */
+.footer{display:flex;align-items:center;justify-content:space-between;gap:1vw;padding:.4vh 1vw;flex-wrap:wrap}
+.footer-info{font-family:'Space Grotesk',sans-serif;font-size:clamp(10px,1.6vh,16px);font-weight:800;letter-spacing:2px;text-transform:uppercase;opacity:.6}
+.footer-info span{font-size:clamp(8px,1.1vh,12px);color:var(--nk-red);font-style:italic;margin-left:10px;font-weight:400}
+.status{display:flex;align-items:center;gap:8px;font-size:clamp(8px,1.25vh,13px);font-weight:800;letter-spacing:1px;color:var(--text-muted);text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--up);animation:pulse 2s infinite;flex-shrink:0}
+.dot.off{background:var(--down);animation:none}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.5)}70%{box-shadow:0 0 0 8px rgba(34,197,94,0)}100%{box-shadow:0 0 0 0 rgba(34,197,94,0)}}
+.up{color:var(--up)!important}
+.down{color:var(--down)!important}
+@keyframes flash{0%{opacity:.3}100%{opacity:1}}
+.flash{animation:flash .45s ease}
+
+/* ============ TABLET ============ */
+@media (max-width: 900px){
+  body{padding:10px;gap:10px}
+  .pos-grid{grid-template-columns:1fr;gap:10px;flex:initial}
+  .header{justify-content:space-between;gap:8px;padding:0}
+  .header-left{gap:8px}
+  .header-brand img{height:36px}
+  .brand-text{font-size:18px;letter-spacing:1px}
+  .header-right{gap:10px}
+  #digital-clock{font-size:24px}
+  .pc-line{padding:7px 0;gap:8px}
+  .pc-raw{white-space:normal;word-break:break-word}
+  .result-banner{flex-direction:column;align-items:stretch;gap:8px;text-align:center}
+  .rb-left{justify-content:center}
+  .rb-right{justify-content:center}
+}
+
+/* ============ TELEFON ============ */
+@media (max-width: 600px){
+  body{padding:8px;gap:8px}
+
+  /* HEADER kompakt: logo+brand solda, saat+tema sağda tek satır */
+  .header{flex-wrap:nowrap;align-items:center;padding:2px 2px 4px}
+  .header-left{flex:1;min-width:0;gap:6px}
+  .header-brand img{height:30px}
+  .brand-text{font-size:15px;letter-spacing:.5px;overflow:hidden;text-overflow:ellipsis}
+  .header-right{gap:8px;flex-shrink:0}
+  #digital-clock{font-size:19px;letter-spacing:-1px}
+  .theme-switch-wrapper{gap:6px}
+  .theme-switch-wrapper .fa-sun,
+  .theme-switch-wrapper .fa-moon{font-size:11px}
+  .theme-switch{width:40px;min-width:40px;height:22px;min-height:22px}
+  .slider:before{width:16px;min-width:16px;height:16px;min-height:16px;bottom:3px;left:3px}
+  input:checked + .slider:before{transform:translateX(18px)}
+
+  /* ÖZET: 3 sütun kompakt */
+  .summary-bar{border-radius:12px}
+  .sum-item{padding:10px 4px;gap:2px}
+  .sum-label{font-size:8px;letter-spacing:.5px}
+  .sum-val{font-size:13px;letter-spacing:-.3px}
+  .sum-sub{font-size:10px}
+
+  /* KARTLAR */
+  .pos-card{border-radius:14px}
+  .pc-head{padding:10px 12px;gap:8px}
+  .pc-icon{width:36px;height:36px;border-radius:10px;font-size:14px}
+  .pc-name{font-size:14px;letter-spacing:.3px}
+  .pc-sub{font-size:8.5px;letter-spacing:.5px}
+  .pc-qty{font-size:20px}
+  .pc-qty span{font-size:8px;letter-spacing:1px;margin-top:2px}
+
+  .pc-lines{padding:2px 12px}
+  .pc-line{padding:8px 0;font-size:11px;gap:6px}
+  .pc-line span{font-size:11px}
+  .pc-line b{font-size:13px;letter-spacing:-.2px}
+
+  .pc-pnl{padding:12px 12px 14px}
+  .pnl-label{font-size:8.5px;letter-spacing:1.5px;margin-bottom:2px}
+  .pnl-value{font-size:24px;letter-spacing:-.5px}
+  .pnl-pct{font-size:11px;margin-top:2px}
+
+  .pc-raw{padding:7px 12px;font-size:9px;line-height:1.35;white-space:normal;word-break:break-word}
+
+  /* SONUÇ BANDI */
+  .result-banner{border-radius:14px;padding:12px;gap:6px}
+  .rb-label{font-size:10px;letter-spacing:1.5px}
+  .rb-badge{font-size:10px;padding:4px 10px;letter-spacing:1px}
+  .rb-value{font-size:26px;letter-spacing:-.5px}
+  .rb-pct{font-size:12px}
+
+  /* FOOTER */
+  .footer{padding:4px 2px}
+  .footer-info{font-size:11px;letter-spacing:1.5px}
+  .footer-info span{font-size:9px;margin-left:6px}
+  .status{font-size:9px;letter-spacing:.5px;gap:6px}
+  .dot{width:7px;height:7px}
+}
+
+/* Çok küçük telefonlar (320px) */
+@media (max-width: 360px){
+  .brand-text{font-size:13px}
+  #digital-clock{font-size:17px}
+  .sum-val{font-size:12px}
+  .pnl-value{font-size:21px}
+  .rb-value{font-size:23px}
+  .pc-line b{font-size:12px}
+}
+</style>
+</head>
+<body data-theme="light">
+
+<header class="header">
+  <div class="header-left">
+    <div class="header-brand"><img src="nklogo.png" alt="NK" onerror="this.style.display='none'"></div>
+    <span class="brand-text">NK DÖVİZ</span>
+  </div>
+  <div class="header-right">
+    <div id="digital-clock">00:00:00</div>
+    <div class="theme-switch-wrapper">
+      <i class="fas fa-sun"></i>
+      <label class="theme-switch">
+        <input type="checkbox" id="checkbox" onchange="toggleTheme()">
+        <div class="slider"></div>
+      </label>
+      <i class="fas fa-moon"></i>
+    </div>
+  </div>
+</header>
+
+<div class="summary-bar">
+  <div class="sum-item">
+    <span class="sum-label">Toplam Maliyet</span>
+    <span class="sum-val" id="v-cost">--</span>
+  </div>
+  <div class="sum-item">
+    <span class="sum-label">Güncel Değer</span>
+    <span class="sum-val" id="v-value">--</span>
+  </div>
+  <div class="sum-item">
+    <span class="sum-label">Toplam K/Z</span>
+    <span class="sum-val" id="v-pnl">--</span>
+    <span class="sum-sub" id="v-pnlpct"></span>
+  </div>
+</div>
+
+<div class="pos-grid" id="pos-grid"></div>
+
+<div class="result-banner" id="result-banner">
+  <div class="rb-left">
+    <span class="rb-label">Genel Toplam</span>
+    <span class="rb-badge" id="rb-badge">--</span>
+  </div>
+  <div class="rb-right">
+    <span class="rb-value" id="rb-value">--</span>
+    <span class="rb-pct" id="rb-pct"></span>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-info">NK DÖVİZ <span>BY NKartal</span></div>
+  <div class="status">
+    <span class="dot" id="dot"></span>
+    <span id="status-text">BAĞLANIYOR…</span>
+    <span id="last-update" style="opacity:.6;margin-left:4px"></span>
+  </div>
+</footer>
+
+<script>
+const API = "https://harem.nurullahkartal4153012.workers.dev";
+
+const POSITIONS = [
+  { key:'USD', id:'USDTRY', name:'USD', sub:'AMERİKAN DOLARI',
+    icon:'fa-dollar-sign', qty:16900, unit:'USD', cost:832270, min:1, max:1000 },
+  { key:'CEYREK', id:'ÇEYREK', name:'ÇEYREK ALTIN', sub:'YENİ BASKI',
+    icon:'fa-coins', qty:7, unit:'ADET', cost:75600, min:1000, max:1000000 }
+];
+
+/* --- AKILLI SAYI AYRIŞTIRMA --- */
+function numCandidates(raw){
+  if(raw === null || raw === undefined) return [];
+  if(typeof raw === 'number') return isFinite(raw) ? [raw] : [];
+  let s = String(raw).trim();
+  if(!s) return [];
+  s = s.replace(/[^\d.,\-]/g, '');
+  if(!s) return [];
+  const out = [];
+  const push = v => { if(isFinite(v) && !out.some(x => Math.abs(x - v) < 1e-9)) out.push(v); };
+  push(parseFloat(s.replace(/\./g,'').replace(',', '.')));
+  push(parseFloat(s.replace(/,/g,'')));
+  push(parseFloat(s));
+  return out;
+}
+function pickNum(raw, min, max){
+  const c = numCandidates(raw);
+  if(!c.length) return NaN;
+  const inRange = c.filter(v => v >= min && v <= max);
+  if(inRange.length) return inRange[0];
+  const mid = (min + max) / 2;
+  let best = c[0], bestD = Infinity;
+  c.forEach(v => { const d = Math.abs(v - mid); if(d < bestD){ bestD = d; best = v; } });
+  return best;
+}
+
+const nfmt = (n,d=0) => isFinite(n) ? n.toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d}) : '--';
+const priceFmt = n => isFinite(n) ? n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:4}) : '--';
+const tlFmt = n => isFinite(n) ? n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' ₺' : '--';
+const signedTL = n => isFinite(n) ? (n > 0 ? '+' : '') + n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' ₺' : '--';
+const signedPct = n => isFinite(n) ? (n > 0 ? '+' : '') + n.toLocaleString('tr-TR',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' %' : '--';
+
+function normalizeKey(s){
+  return String(s).toUpperCase()
+    .replace(/Ç/g,'C').replace(/Ğ/g,'G').replace(/İ/g,'I')
+    .replace(/Ö/g,'O').replace(/Ş/g,'S').replace(/Ü/g,'U')
+    .replace(/[^A-Z0-9]/g,'');
+}
+function getEntry(data, id){
+  if(!data || typeof data !== 'object') return null;
+  if(data[id]) return data[id];
+  const target = normalizeKey(id);
+  for(const k in data){ if(normalizeKey(k) === target) return data[k]; }
+  return null;
+}
+
+function buildCards(){
+  document.getElementById('pos-grid').innerHTML = POSITIONS.map(p => `
+    <div class="pos-card" data-card="${p.key}">
+      <div class="pc-head">
+        <div class="pc-title">
+          <div class="pc-icon"><i class="fas ${p.icon}"></i></div>
+          <div>
+            <div class="pc-name">${p.name}</div>
+            <div class="pc-sub">${p.sub}</div>
+          </div>
+        </div>
+        <div class="pc-qty">${nfmt(p.qty,0)}<span>${p.unit}</span></div>
+      </div>
+      <div class="pc-lines">
+        <div class="pc-line"><span>Ortalama Alış</span><b data-f="avg">--</b></div>
+        <div class="pc-line"><span>Piyasa Alış / Satış</span><b data-f="market">--</b></div>
+        <div class="pc-line"><span>GKO</span><b data-f="gko">--</b></div>
+        <div class="pc-line"><span>Toplam Maliyet</span><b data-f="cost">--</b></div>
+        <div class="pc-line"><span>Güncel Değer</span><b data-f="value">--</b></div>
+      </div>
+      <div class="pc-pnl" data-f="pnlbox">
+        <div class="pnl-label">Kâr / Zarar</div>
+        <div class="pnl-value" data-f="pnl">--</div>
+        <div class="pnl-pct" data-f="pct">--</div>
+      </div>
+      <div class="pc-raw" data-f="raw">Ham veri: --</div>
+    </div>
+  `).join('');
+}
+
+function setText(card, field, text, cls){
+  const el = card.querySelector(`[data-f="${field}"]`);
+  if(!el) return;
+  if(el.textContent !== text){
+    el.textContent = text;
+    el.classList.remove('flash');
+    void el.offsetWidth;
+    el.classList.add('flash');
+  }
+  if(cls !== undefined){
+    el.classList.remove('up','down');
+    if(cls) el.classList.add(cls);
+  }
+}
+
+function render(data){
+  if(!data || typeof data !== 'object') return;
+  let totCost = 0, totValue = 0, missing = false;
+
+  POSITIONS.forEach(p => {
+    const card = document.querySelector(`[data-card="${p.key}"]`);
+    if(!card) return;
+
+    const entry = getEntry(data, p.id);
+    const rawAlis  = entry ? (entry.Alis  ?? entry.alis  ?? '--') : '--';
+    const rawSatis = entry ? (entry.Satis ?? entry.satis ?? '--') : '--';
+    const rawGko   = entry ? (entry.GKO   ?? entry.gko   ?? '--') : '--';
+
+    let alisStr = rawAlis, satisStr = rawSatis;
+    if(typeof alisStr === 'string' && /[│|]/.test(alisStr)){
+      const sp = alisStr.split(/[│|]/);
+      alisStr = sp[0];
+      if(sp[1] && (!satisStr || satisStr === '--')) satisStr = sp[1];
+    }
+    if(typeof satisStr === 'string' && /[│|]/.test(satisStr)){
+      satisStr = satisStr.split(/[│|]/)[0];
+    }
+
+    const price  = pickNum(alisStr,  p.min, p.max);
+    const priceS = pickNum(satisStr, p.min, p.max);
+    const gko    = pickNum(rawGko,   p.min, p.max);
+
+    const ok    = isFinite(price) && price > 0;
+    const value = ok ? p.qty * price : NaN;
+    const pnl   = ok ? value - p.cost : NaN;
+    const pct   = (ok && p.cost > 0) ? (pnl / p.cost) * 100 : NaN;
+
+    totCost += p.cost;
+    if(ok) totValue += value; else missing = true;
+
+    setText(card, 'avg',    priceFmt(p.cost / p.qty));
+    setText(card, 'market', ok
+      ? `${priceFmt(price)} / ${isFinite(priceS) ? priceFmt(priceS) : '--'}`
+      : '--');
+    setText(card, 'gko',    isFinite(gko) ? tlFmt(gko) : '--');
+    setText(card, 'cost',   tlFmt(p.cost));
+    setText(card, 'value',  ok ? tlFmt(value) : '--');
+
+    const dir = isFinite(pnl) ? (pnl >= 0 ? 'up' : 'down') : '';
+    setText(card, 'pnl', signedTL(pnl), dir);
+    setText(card, 'pct', ok ? signedPct(pct) : '--', dir);
+
+    const box = card.querySelector('[data-f="pnlbox"]');
+    if(box){
+      box.classList.remove('profit','loss');
+      if(isFinite(pnl)) box.classList.add(pnl >= 0 ? 'profit' : 'loss');
+    }
+
+    setText(card, 'raw',
+      `Ham: Alış ${rawAlis} · Satış ${rawSatis} · GKO ${rawGko}`);
+  });
+
+  document.getElementById('v-cost').textContent  = tlFmt(totCost);
+  document.getElementById('v-value').textContent = missing ? '--' : tlFmt(totValue);
+
+  const totPnl = missing ? NaN : (totValue - totCost);
+  const totPct = (isFinite(totPnl) && totCost > 0) ? (totPnl / totCost) * 100 : NaN;
+
+  const elPnl = document.getElementById('v-pnl');
+  const newPnl = signedTL(totPnl);
+  if(elPnl.textContent !== newPnl){
+    elPnl.textContent = newPnl;
+    elPnl.classList.remove('flash');
+    void elPnl.offsetWidth;
+    elPnl.classList.add('flash');
+  }
+  elPnl.classList.remove('up','down');
+  if(isFinite(totPnl)) elPnl.classList.add(totPnl >= 0 ? 'up' : 'down');
+
+  const elPct = document.getElementById('v-pnlpct');
+  elPct.textContent = isFinite(totPct) ? signedPct(totPct) : '';
+  elPct.classList.remove('up','down');
+  if(isFinite(totPct)) elPct.classList.add(totPct >= 0 ? 'up' : 'down');
+
+  const banner = document.getElementById('result-banner');
+  const badge  = document.getElementById('rb-badge');
+  const rbVal  = document.getElementById('rb-value');
+  const rbPct  = document.getElementById('rb-pct');
+
+  banner.classList.remove('profit','loss');
+  badge.classList.remove('profit','loss');
+
+  if(isFinite(totPnl)){
+    const isProfit = totPnl >= 0;
+    banner.classList.add(isProfit ? 'profit' : 'loss');
+    badge.classList.add(isProfit ? 'profit' : 'loss');
+    badge.textContent = isProfit ? 'KÂR' : 'ZARAR';
+    rbVal.textContent = signedTL(totPnl);
+    rbVal.className = 'rb-value ' + (isProfit ? 'up' : 'down');
+    rbPct.textContent = isFinite(totPct) ? signedPct(totPct) : '';
+    rbPct.className = 'rb-pct ' + (isProfit ? 'up' : 'down');
+  }else{
+    badge.textContent = '--';
+    rbVal.textContent = '--';
+    rbVal.className = 'rb-value';
+    rbPct.textContent = '';
+    rbPct.className = 'rb-pct';
+  }
+}
+
+function setStatus(ok){
+  const dot = document.getElementById('dot');
+  const txt = document.getElementById('status-text');
+  dot.classList.toggle('off', !ok);
+  txt.textContent = ok ? 'CANLI' : 'BAĞLANTI YOK';
+  if(ok){
+    document.getElementById('last-update').textContent =
+      '· ' + new Date().toLocaleTimeString('tr-TR');
+  }
+}
+
+async function sync(){
+  try{
+    const res = await fetch(API + "?t=" + Date.now(), { cache: 'no-store' });
+    if(!res.ok) throw new Error('HTTP ' + res.status);
+    const data = await res.json();
+    render(data);
+    setStatus(true);
+  }catch(err){
+    setStatus(false);
+    console.warn('NK sync hatası:', err.message);
+  }
+}
+
+function applyTheme(t){
+  document.body.setAttribute('data-theme', t);
+  document.getElementById('checkbox').checked = (t === 'dark');
+  const meta = document.querySelector('meta[name="theme-color"]');
+  if(meta) meta.setAttribute('content', t === 'dark' ? '#0e0e0e' : '#f8fafc');
+  localStorage.setItem('nk-theme', t);
+}
+function toggleTheme(){
+  applyTheme(document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+}
+
+function tick(){
+  document.getElementById('digital-clock').textContent =
+    new Date().toLocaleTimeString('tr-TR');
+}
+
+buildCards();
+applyTheme(localStorage.getItem('nk-theme') || 'light');
+tick(); setInterval(tick, 1000);
+
+sync();
+setInterval(sync, 4000);
+
+/* Sekmeye geri dönünce hemen yenile */
+document.addEventListener('visibilitychange', () => { if(!document.hidden) sync(); });
+</script>
+</body>
+</html>
